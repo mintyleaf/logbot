@@ -1,0 +1,13 @@
+#!/bin/sh
+
+PREFIX=$(echo ${PWD##*/} | tr a-z A-Z)
+
+export "$PREFIX"_TOKEN="" 
+export "$PREFIX"_PORT="6666" 
+export "$PREFIX"_CHATID="" 
+
+go build
+while true;
+do
+	./${PWD##*/} "${PWD##*/}"
+done
